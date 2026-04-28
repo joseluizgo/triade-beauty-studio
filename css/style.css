@@ -107,41 +107,97 @@ body{
 /* Sobre */
 .lead{ color:var(--muted); font-size:1rem; max-width:780px; }
 
-/* Cards de serviços */
-.cards{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:1rem;
-  margin-top:1rem;
-}
-.card{
-  display:flex;
-  gap:1rem;
-  background:var(--glass);
-  border-radius:var(--radius);
-  padding:0.8rem;
-  align-items:center;
-  box-shadow:var(--shadow);
-  transition:transform .22s ease, box-shadow .22s ease;
-}
-.card:hover{ transform:translateY(-6px); box-shadow:0 12px 30px rgba(43,43,43,0.12); }
-.card-media img{
-  width:96px;
-  height:96px;
-  object-fit:cover;
-  border-radius:12px;
-  border:4px solid #fff;
-}
-.card-body h3{ margin:0 0 0.3rem; font-size:1.05rem; }
-.card-body p{ margin:0.2rem 0; color:var(--muted); }
-.card-cta{
-  display:inline-block;
-  margin-top:0.6rem;
-  color:var(--gold);
-  font-weight:600;
-  text-decoration:none;
+/* ====================== SERVIÇOS - CARDS PREMIUM ====================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+  margin-top: 2rem;
 }
 
+.service-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(199, 123, 127, 0.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(199, 123, 127, 0.15);
+}
+
+.service-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.08);
+}
+
+.service-body {
+  padding: 1.6rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-body h3 {
+  font-size: 1.55rem;
+  margin: 0 0 0.5rem 0;
+  color: #2c2525;
+}
+
+.professional {
+  color: #c77b7f;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+  font-size: 1.02rem;
+}
+
+.desc {
+  color: #5c4a4a;
+  line-height: 1.55;
+  margin-bottom: 1.4rem;
+  flex-grow: 1;
+}
+
+.service-cta {
+  margin-top: auto;
+  color: #b36b72;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.02rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.service-cta:hover {
+  color: #c77b7f;
+  gap: 10px;
+}
+
+/* Responsividade */
+@media (min-width: 720px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 /* Testimonials */
 .testimonials{
   display:grid;
